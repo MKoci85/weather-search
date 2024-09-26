@@ -63,7 +63,7 @@ export default function useWeather() {
         setWeather(initialState)
         try {
             const appId = import.meta.env.VITE_API_KEY
-            const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${appId}`
+            const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${appId}`
             const { data } = await axios(geoUrl)
             //Check if city exists
             if(!data[0]){
